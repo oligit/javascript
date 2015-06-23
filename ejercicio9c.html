@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 9 C</title>
+	<link rel="stylesheet" href="">
+	<script>
+		function suma1 () {
+			z1 = x1 + y1;
+		}
+		function suma2 (x, y){
+			z1 = x + y;
+		}
+		function suma3 (x, y){
+			return x + y;
+		}
+		function suma4 (arr){
+			arr[2] = arr[0] + arr[1];
+		}
+	</script>
+</head>
+<body>
+	<div class="naranja">
+		<h1>[Ejercicio 9c]</h1>
+	</div>
+	<div class="azul">
+		<p>
+			<span>1. </span>
+			<script>var z1 = 0; var x1 = 12; var y1 = 10; suma1(); document.write(x1+" + "+y1+" = "+z1)</script>
+		</p>
+		<p>
+			<span>2. </span>
+			<script>z1 = 0; x1 = 5; y1 = 3; suma2(x1, y1); document.write(x1+" + "+y1+" = "+z1);</script>
+		</p>
+		<p>
+			<span>3. </span>
+			<script>z1 = 0; x1 = 3; y1 = 4;document.write(x1+" + "+y1+" = "+suma3(x1, y1));</script>
+		</p>
+		<p>
+			<span>4. </span>
+			<script>var array = [12, 5, 0]; suma4(array); document.write(arr[0]+" + "+arr[1]+" = "+arr[2])</script>
+		</p>
+	</div>
+</body>
+	<style>
+		.azul {
+		margin: 0 auto;
+		border: 4px outset #0ABEEB;
+		padding: 0 2%;
+		width: 50%;
+		overflow: auto;
+		background-color: #0ABEEB;
+		border-radius: 0 0 15px 15px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+
+	}
+	.naranja {
+		margin: 0 auto;
+		border: 4px outset #EB9D16;
+		background-color: #F4A702;
+		border-radius: 15px 15px 0 0;
+		width: 50%;
+		text-align: center;
+		margin-bottom: 2%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	span{
+		font-weight: 600;
+		font-size: 1em;
+	}
+	@font-face {
+		font-family: "railway";  	  
+		src: url("../fonts/railway.ttf"); 	
+		/*font-size: 3em;*/
+	}
+	h1 {
+		font-family: "railway";
+		font-size: 3em;
+		/*width: 100%;*/
+	}
+	@media (max-width: 800px) {
+		.naranja{
+			width: 100%;
+		}
+		.azul {
+			width: 100%;
+		}
+	}
+	</style>
+</html>
