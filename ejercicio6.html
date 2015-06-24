@@ -6,17 +6,92 @@
 	<title>Ejercicio 6</title>
 	<link rel="stylesheet" href="">
 </head>
-<script>
-	(function(){
-		var n = Number(prompt("Introduce un número para ver si es par o impar") || 5);
-		if (n%2==0) {
-			document.write(n+" es par");
-		} else {
-			document.write(n+" es impar");
+<style>
+	@font-face {
+		font-family: "homeremedy";  	  
+		src: url("../fonts/homeremedy.ttf"); 	
+		/*font-size: 3em;*/
+	}
+	h1 {
+		font-family: "homeremedy";
+		font-size: 3em;
+		font-weight: 100;
+	}
+	.morado {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #9312ED;
+		background-color: #C688DB;
+		margin: 0 auto 3% auto;
+		border-radius: 15px 15px 0 0;
+	}
+	.verde {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #16BE16;
+		background-color: #64D66C;
+		margin: 0 auto;
+		border-radius: 0 0 15px 15px;
+	}
+	footer {
+		text-align: center;
+		border-top: 1px solid #4F0063;
+		margin: 2% auto 0 auto;
+		width: 80%;
+	}
+
+	img[alt*="github"] {
+		width: 1em;
+	}
+	a[href*="github"] {
+		color: #000;
+		text-decoration: none;
+	}
+	@media(max-width: 750px){
+		.morado, .verde{
+			width: 100%;
 		}
-	})();
+		footer {
+			width: 100%;
+		}
+	}
+</style>
+<script>
+	var f = function(){
+		var n = Number(prompt("Introduce un número para ver si es par o impar") || 5);
+		var _s;
+		if (n%2==0) {
+			_s = n+" es par";
+		} 
+		else if (isNaN(n)){
+			_s = "Mete un número anda, que contento me tienes...";
+		}
+		else {
+			_s = n+" es impar";
+		}
+		document.write(_s);
+	}; // fin de f() 
 </script>
 <body>
-	
+	<div class="morado">
+		<h1>Ejercicio 6</h1>
+	</div>
+	<div class="verde">
+		<span>
+			<p>
+				<script>
+					f();
+				</script>
+			</p>
+		</span>
+	</div>
+	<footer>
+		<p>
+			<a href="https://github.com/oligit" target="_blank" >
+				<img src="images/githubicon.ico" alt="Icono de github" title="Fork me @ github: https://github.com/oligit"> Jorge Olivas 
+			</a>
+		</p>
+	</footer>
 </body>
+
 </html>
