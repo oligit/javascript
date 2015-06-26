@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 11c</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	var vuelo = { /* notación JSON */
+		aerolinea: 'Oceanic',
+		number: 815,
+		salida: {
+			claveIATA: 'SYD',
+			fecha: '2004-09-22 14:55',
+			ciudad: 'Sydney'
+		},
+		llegada: {
+			claveIATA: 'LAX',
+			fecha: '2004-09-23 10:42',
+			ciudad: 'Los Ángeles'
+		}
+	};
+	for(v in vuelo) {
+		document.write(v+' - '+vuelo[v]);
+	}
+	document.write('<br>');
+	for(v2 in vuelo.salida){
+			document.write(v2+' = '+vuelo.salida[v2]);
+	}
+	document.write('<br>');
+
+	for(v3 in vuelo.llegada){
+			// document.write(v3+' = '+vuelo.llegada[v3]);
+		}
+</script>
+<body>
+	
+</body>
+</html>

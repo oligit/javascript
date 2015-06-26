@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 11b</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	var calendario = {
+		"Lunes": "Monday",
+		"Martes": "Tuesday",
+		"Miercoles": "Wednesday",
+		"Jueves": "Thursday",
+		"Viernes": "Friday",
+		"Sabado": "Saturday",
+		"Domingo": "Sunday"
+	};
+	var meses = {
+		'Enero': 'January',
+		'Febrero': 'February',
+		'Marzo': 'March',
+		'Abril': 'April',
+		'Mayo': 'May',
+		'Junio': 'Jun',
+		'Julio': 'July',
+		'Agosto': 'August',
+		'Septiembre': 'September',
+		'Octubre': 'October',
+		'Noviembre': 'November',
+		'Diciembre': 'December'
+	};
+	console.log(meses);
+	
+</script>
+<style>
+	table {
+		margin: 0 auto;
+		border: 5px outset #DB5C5C;
+		border-radius: 15px;
+	}
+	.naranja{
+		margin: 0 auto;
+		width: 50%;
+		border: 3px inset #F6BE76;
+		border-radius: 15px;
+		text-align: center;
+		margin-bottom: 2%;
+		background-color: #EED7AA;
+	}
+	tr:nth-child(even){ /* par */
+		background-color: #B3C0F7;
+	}
+	tr:nth-child(odd) { /* impar */
+		background-color: #DAA0F5;
+	}
+</style>
+<body>
+	<div class="naranja">
+		<h1>Ejercicio 11b</h1>
+	</div>
+	<!-- <table> -->
+		<script>
+			document.write('<table>');
+			for(var indice in meses){
+				document.write('<tr><td>'+indice+'</td><td>'+meses[indice]+'</td></tr>');
+			}
+			document.write('</table>');
+		</script>
+	<!-- </table> -->
+</body>
+</html>
