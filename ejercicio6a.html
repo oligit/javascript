@@ -3,20 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ejercicio 6</title>
+	<title></title>
 	<link rel="stylesheet" href="">
 </head>
 <style>
-	@font-face {
-		font-family: "homeremedy";  	  
-		src: url("../fonts/homeremedy.ttf"); 	
+		@font-face {
+		font-family: "tattoo";  	  
+		src: url("../fonts/tattoo.ttf"); 	
 		/*font-size: 3em;*/
 	}
 	span{
 
 	}
 	h1 {
-		font-family: "homeremedy";
+		font-family: "tattoo";
 		font-size: 3em;
 		font-weight: 100;
 	}
@@ -50,55 +50,27 @@
 		color: #000;
 		text-decoration: none;
 	}
-	@media(max-width: 750px){
-		.morado, .verde{
-			width: 100%;
-		}
-		footer {
-			width: 100%;
-		}
-	}
 </style>
 <script>
-function isBlank(str) { return (!str || /^\s*$/.test(str)); }
-	var f = function(){
-		var n = prompt("Introduce un número para ver si es par o impar") || 5;
-		n = n.split(" ").join("");
-
-		var _s;
-		console.log('n:'+n+".");
-		console.log(n.length);
-		if (isBlank(n)) {
-			_s = "Deja de meter espacios en blanco, capullo";
-		};
-		if (n.length==0){
-			_s = "Deja de meter espacios en blanco, capullo";
+	function media () {
+		var _m = 0;
+		console.log(arguments);
+		for(var i = 0; i < arguments.length; i++){
+			_m += arguments[i];
 		}
-		else if (n%2===0) {
-			_s = n+" es par";
-		} 
-		else if (isNaN(n)){
-			_s = "Mete un número anda, que contento me tienes...";
-		}
-		
-		else {
-			_s = n+" es impar";
-		}
-		document.write(_s);
-	}; // fin de f() 
+		return _m / arguments.length;
+	}
 </script>
 <body>
 	<div class="morado">
-		<h1>Ejercicio 6</h1>
+		<h1>Ejercicio 6a</h1>
 	</div>
 	<div class="verde">
-		<span>
-			<p>
-				<script>
-					f();
-				</script>
-			</p>
-		</span>
+		<p>
+			<script>
+				document.write(media(3, 5));
+			</script>
+		</p>
 	</div>
 	<footer>
 		<p>
@@ -108,5 +80,4 @@ function isBlank(str) { return (!str || /^\s*$/.test(str)); }
 		</p>
 	</footer>
 </body>
-
 </html>

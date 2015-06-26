@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 10</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function calculaFactorial (_n) {
+		var i;
+		var resultado=1;
+		for(i=1; i<=_n;i++){
+			resultado*=i;
+		}
+		return resultado;
+	}
+	function validator (){
+		var num = prompt("Introduce un número", 5) || 5;
+		try{
+			if (num == "") throw " campo vacío.";
+			else if (isNaN(num)) throw " el valor indicado no es un número.";
+			else if (num<2 && num!=0) throw " número demasiado pequeño.";
+			else document.write(calculaFactorial(num));
+		}catch(e){
+			document.write("Error:"+e);
+			console.log(e);
+		}
+	}
+</script>
+<style>
+	@font-face {
+		font-family: "jackpot";  	  
+		src: url("../fonts/jackpot.ttf"); 	
+		/*font-size: 3em;*/
+	}
+	h1 {
+		font-family: "jackpot";
+		font-size: 3em;
+		font-weight: 100;
+	}
+	.morado {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #9312ED;
+		background-color: #C688DB;
+		margin: 0 auto 3% auto;
+		border-radius: 15px 15px 0 0;
+	}
+	.verde {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #16BE16;
+		background-color: #64D66C;
+		margin: 0 auto;
+		border-radius: 0 0 15px 15px;
+	}
+	footer {
+		text-align: center;
+		border-top: 1px solid #4F0063;
+		margin: 2% auto 0 auto;
+		width: 80%;
+	}
+
+	img[alt*="github"] {
+		width: 1em;
+	}
+	a[href*="github"] {
+		color: #000;
+		text-decoration: none;
+	}
+</style>
+<body>
+	<div class="morado">
+		<h1>EJERCICIO 10</h1>
+	</div>
+	<div class="verde">
+		<p><script>validator();</script></p>
+	</div>
+</body>
+</html>

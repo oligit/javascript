@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+		@font-face {
+		font-family: "jackpot";  	  
+		src: url("../fonts/jackpot.ttf"); 	
+		/*font-size: 3em;*/
+	}
+	span{
+
+	}
+	h1 {
+		font-family: "jackpot";
+		font-size: 3em;
+		font-weight: 100;
+	}
+	.morado {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #9312ED;
+		background-color: #C688DB;
+		margin: 0 auto 3% auto;
+		border-radius: 15px 15px 0 0;
+	}
+	.verde {
+		width: 50%;
+		text-align: center;
+		border: 3px outset #16BE16;
+		background-color: #64D66C;
+		margin: 0 auto;
+		border-radius: 0 0 15px 15px;
+	}
+	footer {
+		text-align: center;
+		border-top: 1px solid #4F0063;
+		margin: 2% auto 0 auto;
+		width: 80%;
+	}
+
+	img[alt*="github"] {
+		width: 1em;
+	}
+	a[href*="github"] {
+		color: #000;
+		text-decoration: none;
+	}
+</style>
+<script>
+	function factorial () {
+		var num = Number(prompt("Introduce un número", 5) || 5);
+		var i;
+		var resultado=1;
+		for(i=1; i<=num;i++){
+			resultado*=i;
+		}
+		console.log(resultado);
+	}
+	factorial();
+	function factorialRecursivo (num){
+		if (num==1){
+			return 1;
+		}
+		else{
+			return num * factorialRecursivo(num-1);
+		}
+	}
+	// document.write(factorialRecursivo(5));
+</script>
+<body>
+	<div class="morado">
+		<h1>EJERCICIO 7B</h1>
+	</div>
+	<div class="verde">
+		<p></p>
+	</div>
+</body>
+</html>
