@@ -21,6 +21,7 @@
 			if (num == "") throw " campo vacío.";
 			else if (isNaN(num)) throw " el valor indicado no es un número.";
 			else if (num<2 && num!=0) throw " número demasiado pequeño.";
+			else if (num>170) throw " número demasiado alto.";
 			else document.write(calculaFactorial(num));
 		}catch(e){
 			document.write("Error:"+e);
@@ -30,12 +31,12 @@
 </script>
 <style>
 	@font-face {
-		font-family: "jackpot";  	  
-		src: url("../fonts/jackpot.ttf"); 	
+		font-family: "Manga";  	  
+		src: url("../fonts/Manga.otf"); 	
 		/*font-size: 3em;*/
 	}
 	h1 {
-		font-family: "jackpot";
+		font-family: "Manga";
 		font-size: 3em;
 		font-weight: 100;
 	}

@@ -21,18 +21,20 @@
 			ciudad: 'Los Ángeles'
 		}
 	};
+	document.write('<ul>');
 	for(v in vuelo) {
-		document.write(v+' - '+vuelo[v]);
-	}
-	document.write('<br>');
-	for(v2 in vuelo.salida){
-			document.write(v2+' = '+vuelo.salida[v2]);
-	}
-	document.write('<br>');
-
-	for(v3 in vuelo.llegada){
-			// document.write(v3+' = '+vuelo.llegada[v3]);
+		if (typeof(vuelo[v])=='object') {
+			document.write('<li>'+v+'<ul>');
+			for(var v2 in vuelo[v]){
+				document.write('<li>'+v2+' : '+vuelo[v][v2]+'</li>');
+			}
+			document.write('</li></ul>');
 		}
+		else{
+			document.write('<li>'+v+' : '+vuelo[v]+'</li>')
+		}
+	}
+	document.write('</ul>');
 </script>
 <body>
 	
