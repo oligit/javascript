@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 21</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	//descripcion, código, precio
+	function Producto (descripcion, codigo, precio) {
+		this.descripcion = descripcion;
+		this.codigo = codigo;
+		this.precio = precio;
+	};
+	Producto.prototype.IVA = function(precio){
+		this.precio = precio + (precio*0.21);
+		console.log(this.precio);
+		return this.precio;
+	};
+	var usb = new Producto('USB de 32 Gb', 22, 8);
+	usb.IVA(8);
+	console.log(usb.precio);
+</script>
+<body>
+	
+</body>
+</html>
