@@ -9,12 +9,34 @@
 <script>
 	function Triangulo (l1, l2, l3) {
 		//getLados, getPerimetro, getTipo
-		this.l1 = l1;
-		this.l2 = l2;
-		this.l3 = l3;
-  
-
-	}
+		this._l1 = l1;
+		this._l2 = l2;
+		this._l3 = l3;
+	};
+	Triangulo.prototype.getLados = function(){
+		document.write('Los lados son: '+this._l1+", "+this._l2+", "+this._l3+"<br>");
+	};
+	Triangulo.prototype.getPerimetro = function(){
+		var _p = this._l1+this._l2+this._l3;
+		document.write("El perímetro es: "+_p+"<br>");
+	};
+	Triangulo.prototype.getTipo = function(){
+		var _s;
+		if (this._l1===this._l2 && this._l1===this._l3) {
+			_s = " equilátero";
+		}
+		else if (this._l1===this._l2 || this._l1===this._l3 || this._l2===this._l3){
+			_s = " isósceles";
+		}
+		else {
+			_s = " escaleno";
+		}
+		document.write("Este triángulo es:"+_s+"<br>");
+	};
+	var t1 = new Triangulo(5,5,5);
+	t1.getLados();
+	t1.getPerimetro();
+	t1.getTipo();
 </script>
 <body>
 	
