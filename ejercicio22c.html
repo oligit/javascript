@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio22c</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function Producto (d, c, p){
+		/* descripcion codigo precio*/
+		var _d = d;
+		var _c = c;
+		var _p = p;
+		const IVA = 0.21;
+		this.getDescripcion = function(){
+			return _d;
+		};
+		this.getCodigo = function(){
+			return _c;
+		};
+		this.getPrecio = function(){
+			return _p;
+		};
+		this.getIVA = function(){
+			return _p*IVA;
+		};
+		this.getters = function(){
+			this.getDescripcion();
+			this.getCodigo();
+		};
+		this.setDescripcion = function(x){
+			_d = x;
+		};
+		this.setCodigo = function(x){
+			_c = x;
+		};
+		this.setPrecio = function(x){
+			_p = x;
+		};
+	};
+	var peli = new Producto('ESDLA', 001, 20);
+	console.log(peli.getPrecio());
+	peli.setPrecio(18);
+	console.log(peli.getters());
+</script>
+<body>
+	
+</body>
+</html>
