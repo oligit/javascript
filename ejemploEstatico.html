@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function Persona (n) {
+		var _nombre = n;
+		this.getNombre = function (){
+			return _nombre;
+		}
+	};
+	Persona.prototype.showData = function(){
+		document.write('soy'+_nombre);
+	};
+	Persona.saludar = function (){
+		document.write('Hola, soy una persona');
+	};
+	var p1 = new Persona('pepe');
+	//p1.saludar();//da error
+	Persona.saludar();//devuelve 'Hola, soy una persona'
+</script>
+<body>
+	
+</body>
+</html>

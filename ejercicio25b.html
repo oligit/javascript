@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 25</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function Fabricante (nombre, web, direccion) {
+		this._n = nombre;
+		this._w = web;
+		this._d = direccion;
+	};
+	function Producto (descripcion, codigo, precio) {
+		this._d = descripcion;
+		this._c = codigo;
+		this._p = precio;
+		this._f = new Fabricante('Andamiajes corrochano', 'www.andamiajescorrochano.es', 'c/ Volturno sn');
+	};
+	Producto.prototype.IVA = function(precio){
+		this.precio = precio + (precio*0.21);
+		console.log(this.precio);
+		return this.precio;
+	};
+	var p1 = new Producto('andamio', 77, 300);
+	console.log(p1);
+</script>
+<body>
+	
+</body>
+</html>

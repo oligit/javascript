@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function Triangulo (l1, l2, l3) {
+		//showlados calcperimetro calctipo
+		var _l1 = l1;
+		var _l2 = l2;
+		var _l3 = l3;
+		this.getL1 = function () {
+			return _l1;
+		}
+		this.getL2 = function () {
+			return _l2;
+		}
+		this.getL3 = function () {
+			return _l3;
+		};
+		Triangulo.tiposTriangulo = ['equilatero', 'isósceles', 'escaleno'];
+		Triangulo.prototype.showLados = function(){
+			return this.getL1()+', '+this.getL2()+', '+this.getL3();
+		};
+		Triangulo.prototype.calcPerimetro = function(){
+			return this.getL1()+this.getL2()+this.getL3();
+		};
+		Triangulo.prototype.calcTipo = function(){
+			var i;
+			if (this.getL1()===this.getL2() && this.getL1()===this.getL3()) {
+				i=0;
+			}
+			else if (this.getL1()===this.getL2() || this.getL1()===this.getL3() || this.getL2()===this.getL3()){
+				i=1;
+			}
+			else {
+				i=2;
+			}
+			return Triangulo.tiposTriangulo[i];
+		};
+	};
+
+	var t1 = new Triangulo(5,5,5);
+	document.write('<br>T1: '+t1.showLados()+' | '+t1.calcPerimetro()+' | '+t1.calcTipo());
+
+	var t2 = new Triangulo(5,5,4);
+	document.write('<br>T2: '+t2.showLados()+' | '+t2.calcPerimetro()+' | '+t2.calcTipo());
+
+	var t3 = new Triangulo(3,5,4);
+	document.write('<br>T3: '+t3.showLados()+' | '+t3.calcPerimetro()+' | '+t3.calcTipo());
+</script>
+<body>
+	
+</body>
+</html>

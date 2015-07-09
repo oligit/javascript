@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+
+    <script>
+        var oFactura = {
+            oEmpresa: {
+                nombre : "Skyline Design console",
+                direccion : "Calle Pradera 16",
+                telefono : "456485645", 
+                nif : "A45486123"
+            },
+            oCliente: {
+                nombre: "Esutaqui", 
+                direccion: "Calle del Cliente 5",
+                telefono: "845484",
+                dni: "542348453E"
+            },
+            filasProductos: [{ descripcion: "producto1", precio: 40, cantidad: 200 },
+                             { descripcion: "producto2", precio: 50, cantidad: 10 },
+                             { descripcion: "producto3", precio: 5, cantidad: 3 }],
+            subtotal: 0,
+            total: 0,
+            importeTotal: function () {
+                for (i = 0; i < this.filasProductos.length ; i++) {
+                 this.subtotal = this.subtotal + (this.filasProductos[i].precio * this.filasProductos[i].cantidad)
+                } return this.subtotal
+            },
+
+            tipoIva: 0.21,
+
+            calcularTotal: function () {
+                this.total = this.subtotal + (this.subtotal * this.tipoIva); return this.total
+            },
+
+            MostrarDatos: function () {
+                for (i = 0; i < this.filasProductos.length ; i++) {
+                    document.write("Empresa : " + this.oEmpresa.nombre + "</br>Direccion: " + this.oEmpresa.direccion + "<br/>Telefono: " + this.oEmpresa.telefono + "<br/>Producto: " +
+                    this.filasProductos[i].descripcion + "<br/>Subtotal :" + this.subtotal + "<br/> IVA: 16%<br/> Total : " + this.total + "<br><hr/>")
+                }
+            },
+        
+        } // Cier
+         // Cierre objeto
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <script>
+
+        oFactura.importeTotal();
+        oFactura.calcularTotal();
+        oFactura.MostrarDatos()</script>
+</body>
+</html>

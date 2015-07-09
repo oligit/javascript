@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 23</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	var Factura = (function () {
+		//elementos privados (variables locales del closure)
+		var _empresa = {
+                nombre : "Skyline Design console",
+                direccion : "Calle Pradera 16",
+                telefono : "456485645", 
+                nif : "A45486123"
+        };	
+        var _cliente = {
+                nombre: "Esutaqui", 
+                direccion: "Calle del Cliente 5",
+                telefono: "845484",
+                dni: "542348453E"
+        };
+        var filasProductos = [
+        	{ descripcion: "producto1", precio: 40, cantidad: 200 },
+			{ descripcion: "producto2", precio: 50, cantidad: 10 },
+			{ descripcion: "producto3", precio: 5, cantidad: 3 }
+		];
+        this.subtotal = 0;
+        this.total = 0;
+		return {
+			//elementos públicos del objeto here...
+			calcularTotal: function () {
+                this.total = this.subtotal + (this.subtotal * this.tipoIva); 
+                return this.total;
+            },
+            mostrarDatos: function () {
+                for (i = 0; i < filasProductos.length ; i++) {
+                    document.write("Empresa : " + this._empresa.nombre + "</br>Direccion: " + this._empresa.direccion + "<br/>Telefono: " + this._empresa.telefono + "<br/>Producto: " +
+                    filasProductos[i].descripcion + "<br/>Subtotal :" + this.subtotal + "<br/> IVA: 16%<br/> Total : " + this.total + "<br><hr/>")
+                }
+            }
+		}//..fin del return
+	})();//..fin del closure y autoejecución
+	Factura.mostrarDatos();
+</script>
+<body>
+	
+</body>
+</html>
