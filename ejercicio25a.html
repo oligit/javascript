@@ -7,23 +7,23 @@
 	<link rel="stylesheet" href="">
 </head>
 <script>
-	function Producto (descripcion, codigo, precio) {
+	function Producto (descripcion, codigo, precio, fabricante) {
 		this._d = descripcion;
 		this._c = codigo;
 		this._p = precio;
-		this._f = {
-			nombre: 'Andamiajes corrochano',
-			web: 'www.andamiajescorrochano.es',
-			direccion: 'c/ Volturno SN'
-		};
+		this._f = fabricante;
 	};
 	Producto.prototype.IVA = function(precio){
 		this.precio = precio + (precio*0.21);
 		console.log(this.precio);
 		return this.precio;
 	};
-	var p1 = new Producto('andamio', 77, 300);
+	var p1 = new Producto('andamio', 77, 300, {	nombre: 'Andamiajes corrochano',
+												web: 'www.andamiajescorrochano.es',
+												direccion: 'c/ Volturno SN'
+											  });
 	console.log(p1);
+	console.log(p1._f.web);
 </script>
 <body>
 	

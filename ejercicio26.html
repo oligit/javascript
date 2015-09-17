@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 26</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+	function Empresa (nombre, direccion, telefono, nif) {
+		this.n = nombre;
+		this.d = direccion;
+		this.t = telefono;
+		this.nif = nif;
+	};
+	Empresa.prototype.getnombre = function(){
+		return this.n;
+	};
+	function Cliente (nombre, direccion, telefono, dni) {
+		this.n = nombre;
+		this.d = direccion;
+		this.t = telefono;
+		this.dni = dni;
+	};
+	
+	function Factura (empresa, cliente, productos) {
+		this.productos = [
+			{descripcion: 'dron de combate',precio: 500,cantidad: 2},
+			{descripcion: 'muñeca chochona', precio: 40, cantidad: 5},
+			{descripcion: 'petardos del 15', precio: 14, cantidad: 20}
+		];
+		this.total = 0;
+		this.empresa = empresa;
+		this.cliente = cliente;
+		this.iva = 1.21;
+		this.getProductos = function (){
+			return productos;
+		};
+	};
+	Factura.prototype.importeTotal = function () {
+    	for(i=0; i<this.productos.length; i++){
+    		this.total += (this.productos[i].precio * this.productos[i].cantidad);
+    	}
+    	return this.total;
+    };
+
+    Factura.prototype.importeTotalIVA = function(){
+    	return this.total * this.iva;
+    };
+
+	var e1 = new Empresa('Toys R US', 'Alcalá de Henares', 915864796, 555);
+	var c1 =  new Cliente('Juanito', 'c/ Zurra 34', 915555555, '05458536-J');
+	var f1 = new Factura(e1, c1);
+	console.log(e1);
+	console.log(c1);
+	console.log(f1);
+	console.log(f1.importeTotal());
+	console.log(f1.importeTotalIVA());
+</script>
+<body>
+	
+</body>
+</html>

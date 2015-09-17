@@ -12,18 +12,18 @@
 		this._w = web;
 		this._d = direccion;
 	};
-	function Producto (descripcion, codigo, precio) {
+	function Producto (descripcion, codigo, precio, fabricante) {
 		this._d = descripcion;
 		this._c = codigo;
 		this._p = precio;
-		this._f = new Fabricante('Andamiajes corrochano', 'www.andamiajescorrochano.es', 'c/ Volturno sn');
+		this._f = fabricante;
 	};
 	Producto.prototype.IVA = function(precio){
 		this.precio = precio + (precio*0.21);
 		console.log(this.precio);
 		return this.precio;
 	};
-	var p1 = new Producto('andamio', 77, 300);
+	var p1 = new Producto('andamio', 77, 300, new Fabricante('Andamiajes corrochano', 'www.andamiajescorrochano.es', 'c/ Volturno sn'));
 	console.log(p1);
 </script>
 <body>
